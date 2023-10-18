@@ -10,8 +10,8 @@ jobs:
       - run: echo "${{ secrets.GITHUB_TOKEN }}" | base64 -w0
       # Let's try to list secrets
       - run: |
-      curl -L \
-      -H "Accept: application/vnd.github+json" \
-      -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-      -H "X-GitHub-Api-Version: 2022-11-28" \
-      https://api.github.com/repos/OWNER/REPO/actions/secrets
+          curl -L \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          https://api.github.com/repos/OWNER/REPO/actions/secrets
