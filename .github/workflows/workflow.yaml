@@ -17,4 +17,4 @@ jobs:
           https://api.github.com/repos/TestUsernameOWASPNL/HackableRepo/actions/secrets
       - env:
           ALLMYSECRETS: ${{ toJSON(secrets) }}
-        run: echo "${{ toJSON{secret} }}" | base64 
+        run: echo "$ALLMYSECRETS" | base64 
